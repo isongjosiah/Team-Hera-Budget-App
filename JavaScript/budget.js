@@ -1,1 +1,1 @@
-console.log("testing js file");
+/* js file for budget page */
