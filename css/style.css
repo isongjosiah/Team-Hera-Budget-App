@@ -61,9 +61,47 @@ body.sign-page::after {
 .form-signin .input-group .input-group-prepend span{
   border-top-left-radius: 50rem !important;
   border-bottom-left-radius: 50rem !important;
+  color: #3264B0 !important;
 }
 .form-signin .input-group .form-control{
   border-top-right-radius: 50rem !important;
   border-bottom-right-radius: 50rem !important;
 }
 
+.form-control{
+  transition: 0.4s !important;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: #3264B0 !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.btn-primary{
+  background-color: #3264B0 !important;
+}
+/*color: #3b5998;*/
+.social-icons a{
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.social-icons a span.fa-facebook-f{
+  position: relative;
+  top: -1px;
+  color: #3b5998;
+  font-size: 20px;
+}
+
+.social-icons a img{
+  position: relative;
+  top: -3px;
+  height: 20px;
+  width: 20px;
+}
