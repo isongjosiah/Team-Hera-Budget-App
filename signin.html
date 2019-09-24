@@ -14,6 +14,7 @@
 	    <!-- Bootstrap CSS -->
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 	    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
 	    <link rel="stylesheet" type="text/css" href="css/style.css">
 	    <title>Hera: plan your spending</title>
 	</head>
@@ -26,69 +27,103 @@
 					</div>
 					<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 					 	<li class="nav-item">
-					    	<a class="nav-link active" id="pills-signin-tab" data-toggle="pill" href="#pills-signin" role="tab" aria-controls="pills-signin" aria-selected="true">Sign in</a>
+					    	<a class="nav-link rounded-0" id="pills-signin-tab" data-toggle="pill" href="#pills-signin" role="tab" aria-controls="pills-signin" aria-selected="true">Sign in</a>
 					  	</li>
 					  	<li class="nav-item">
-					    	<a class="nav-link" id="pills-signup-tab" data-toggle="pill" href="#pills-signup" role="tab" aria-controls="pills-signup" aria-selected="false">Sign up</a>
+					    	<a class="nav-link rounded-0 active" id="pills-signup-tab" data-toggle="pill" href="#pills-signup" role="tab" aria-controls="pills-signup" aria-selected="false">Sign up</a>
 					  	</li>
 					</ul>
 					<div class="tab-content" id="myTabContent">
-					  <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="signin-tab">
-					  	<form class="form-signin">
-					  		<div class="input-group mb-3">
-							  	<div class="input-group-prepend">
-							    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope-open-text"></i></span>
+						<!-- signin tab -->
+					  	<div class="tab-pane fade" id="pills-signin" role="tabpanel" aria-labelledby="signin-tab">
+						  	<form class="form-signin">
+						  		<div class="input-group mb-3">
+								  	<div class="input-group-prepend">
+								    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope-open-text"></i></span>
+								  	</div>
+								  	<input type="email" id="inputEmail" class="form-control" placeholder="Email address" aria-label="Email address" aria-describedby="basic-addon1">
+								</div>
+								<div class="input-group mb-3">
+								  	<div class="input-group-prepend">
+								    	<span class="input-group-text" id="basic-addon2"><i class="fas fa-lock"></i></span>
+								  	</div>
+								  	<input type="password" id="inputPassword" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="remember-me"> Keep me Signed in
+									</label>
+								</div>
+							  	<button class="btn btn-primary btn-block rounded-pill" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+							</form>
+							<div class="text-center">
+								<p class="text-center my-1">or Login in with</p>
+							  	<div class="">
+							  		<a class="btn btn-block btn-social btn-facebook btn-sm text-white">
+										<span class="fab fa-facebook-f"></span> Sign in with Facebook
+									</a>
+									<a class="btn btn-block btn-social btn-google btn-sm text-white">
+										<span class="fab fa-google"></span>  Sign in with Google
+									</a>
 							  	</div>
-							  	<input type="email" id="inputEmail" class="form-control" placeholder="Email address" aria-label="Email address" aria-describedby="basic-addon1">
+								<p class="mt-2"> 
+									<a href="#">Forgot password ?
+									</a>
+								</p>
 							</div>
-							<div class="input-group mb-3">
-							  	<div class="input-group-prepend">
-							    	<span class="input-group-text" id="basic-addon2"><i class="fas fa-lock"></i></span>
-							  	</div>
-							  	<input type="password" id="inputPassword" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+					  	</div>
+
+					  <!-- Sign up tab -->
+					  <div class="tab-pane fade show active" id="pills-signup" role="tabpanel" aria-labelledby="signup-tab">
+					  	<form class="form-signup">
+					  		<div class="form-row">
+							    <div class="form-group col-md-6">
+							      <input type="text" class="form-control rounded-pill" id="regFirstName" placeholder="First Name" required>
+							    </div>
+							    <div class="form-group col-md-6">
+							      <input type="text" class="form-control rounded-pill" id="regLastName" placeholder="Last Name" required readonly>
+							    </div>
 							</div>
-							<div class="checkbox mb-3">
-								<label>
-									<input type="checkbox" value="remember-me"> Keep me Signed in
-								</label>
+
+							<div class="form-group">
+							    <input type="text" class="form-control rounded-pill" id="regUserName" placeholder="User Name">
 							</div>
-						  	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-						  	<p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
-						</form>
+							<div class="form-group">
+							    <input type="tel" class="form-control rounded-pill" id="regPhone" placeholder="Phone Number">
+							</div>
+							<div class="form-group">
+							    <input type="email" class="form-control rounded-pill" id="regEmail" placeholder="Email address" required>
+							</div>
+
+							<div class="form-row">
+							    <div class="form-group col-md-6">
+							      	<input type="password" class="form-control rounded-pill" id="regInputPassword" placeholder="Password">
+							    </div>
+							    <div class="form-group col-md-6">
+							      	<input type="password" class="form-control rounded-pill" id="confirmPassword" placeholder="Confirm password" required>
+							    </div>
+							</div>
+
+							<div class="form-group">
+							    <div class="form-check form-check-inline px-0 mx-0">
+								  	<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+								  	<label class="form-check-label" for="inlineCheckbox1">Male</label>
+								</div>
+								<div class="form-check form-check-inline px-0 mx-0">
+								  	<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+								  	<label class="form-check-label" for="inlineCheckbox2">Female</label>
+								</div>
+								<div class="form-check form-check-inline px-0 mx-0">
+								  	<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+								  	<label class="form-check-label" for="inlineCheckbox3">Not specified</label>
+								</div>
+							</div>
+							  <button type="submit" class="btn btn-primary btn-block rounded-pill"><i class="fas fa-user-plus"></i> Register</button>
+					  	</form>
 					  </div>
-					  <div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="signup-tab">...</div>
-					</div>
-					<div class="text-center">
-						<p> 
-							<a href="https://caniuse.com/#feat=css-placeholder-shown">Forgot password ?
-							</a>
-						</p>
 					</div>
 				</div>
 			</div>
-			<!-- <form class="form-signin">
-				<div class="text-center mb-4">
-					<img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-					<h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
-					<p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
-				</div>
-				<div class="form-label-group">
-					<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-					<label for="inputEmail">Email address</label>
-				</div>
-				<div class="form-label-group">
-					<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-					<label for="inputPassword">Password</label>
-				</div>
-
-				<div class="checkbox mb-3">
-					<label>
-						<input type="checkbox" value="remember-me"> Remember me
-					</label>
-				</div>
-			  	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-			  	<p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
-			</form> -->
 		</main>
 	    <!-- Optional JavaScript -->
 	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->

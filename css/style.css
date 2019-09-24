@@ -36,4 +36,23 @@ body.sign-page::after {
 	  margin: auto;
 }
 
+.signin-card .nav .nav-item {    
+}
+
+.signin-card .nav .nav-link {
+  background-color: #ffffff !important;
+  color: #3c3c3c;
+  transition: 0.4s;
+}
+
+.signin-card .nav .nav-link:hover {
+  background-color: #f3f3f3 !important;
+}
+
+.signin-card .nav .nav-link.active {
+  border-bottom: 2px solid #3264B0;
+}
+
+/*-----------Form design ---------*/
+
 
