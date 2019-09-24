@@ -1,107 +1,190 @@
-/* css file for signup/ login page */
-
-/* work on the styling @message @developerRuq @Goldin @thrive */
-
-body{
-
-}
-
-body.sign-page{
-	padding-top: 40px;
-  padding-bottom: 40px;
-	height: 100%;
-	background-image: url('../img/bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-body.sign-page::after {
-    content: "";
-    display: block;
-    position: fixed;
-    padding: 100px 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.signin-card{
-		position: relative;
-    z-index: 2;
-    width: 100%;
-	  max-width: 340px;
-	  padding: 15px;
-	  margin: auto;
-}
-
-.signin-card .nav .nav-item {    
-}
-
-.signin-card .nav .nav-link {
-  background-color: #ffffff !important;
-  color: #3c3c3c;
-  transition: 0.4s;
-}
-
-.signin-card .nav .nav-link:hover {
-  background-color: #f3f3f3 !important;
-  color: rgba(60, 60, 60, 0.8);
-}
-
-.signin-card .nav .nav-link.active {
-  border-bottom: 2px solid #3264B0;
-}
-
-/*-----------Form design ---------*/
-
-
-
-.form-signin .input-group .input-group-prepend span{
-  border-top-left-radius: 50rem !important;
-  border-bottom-left-radius: 50rem !important;
-  color: #3264B0 !important;
-}
-.form-signin .input-group .form-control{
-  border-top-right-radius: 50rem !important;
-  border-bottom-right-radius: 50rem !important;
-}
-
-.form-control{
-  transition: 0.4s !important;
-}
-
-.form-control:focus {
-    background-color: #fff;
-    border-color: #3264B0 !important;
-    outline: 0;
-    box-shadow: none !important;
-}
-
-.btn-primary{
-  background-color: #3264B0 !important;
-}
-/*color: #3b5998;*/
-.social-icons a{
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
+* {
+  box-sizing: border-box;
   padding: 0;
-  border-radius: 50%;
+  margin: 0;
 }
 
-.social-icons a span.fa-facebook-f{
-  position: relative;
-  top: -1px;
-  color: #3b5998;
+.logo-image {
+  width: 180px;
+  /* height: 66px; */
+
+  overflow: hidden;
+  margin-top: -6px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+nav {
+  background: rgb(255, 255, 255);
+  padding: 0px 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: rgb(63, 99, 197);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+}
+
+.menu li a {
+  display: block;
+}
+
+.logo a {
   font-size: 20px;
 }
 
-.social-icons a img{
-  position: relative;
-  top: -3px;
-  height: 20px;
-  width: 20px;
+.button.secondary {
+  border-bottom: 1px #444 solid;
 }
+
+/* mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  order: 1;
+}
+
+.item.button {
+  order: 2;
+}
+
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+
+.item.active {
+  display: block;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.bars {
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  width: 18px;
+}
+
+.bars::before,
+.bars::after {
+  background: #999;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  width: 18px;
+}
+
+.bars::before {
+  top: 5px;
+}
+
+.bars::after {
+  top: -5px;
+}
+
+/* tablet menu */
+
+@media all and (min-width: 468px) {
+  .menu {
+    justify-content: center;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+
+  .toggle {
+    order: 2;
+  }
+
+  .button.secondary {
+    border: 0;
+  }
+
+  .button a {
+    padding: 7px 15px;
+    background: rgb(63, 99, 197);
+    border: 1px solid rgb(63, 99, 197);
+    color: white;
+    border-radius: 50em;
+    text-decoration: none;
+  }
+
+  .button.secondary a {
+    background: transparent;
+    color: rgb(63, 99, 197);
+  }
+
+  .button a:hover {
+    transition: all 0.25s;
+  }
+
+  .button:not(.secondary) a:hover {
+    background: rgb(63, 99, 197);
+    border-color: rgb(89, 118, 197);
+  }
+}
+
+@media all and (min-width: 768px) {
+  .item {
+    display: block;
+    width: auto;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  .item {
+    order: 1;
+  }
+
+  .button {
+    order: 2;
+  }
+
+  .menu li {
+    padding: 15px 10px;
+  }
+
+  .menu li.button {
+    padding-right: 0;
+  }
+}
+/* END OF NAV BAR */
