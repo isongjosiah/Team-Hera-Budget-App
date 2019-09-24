@@ -1,3 +1,190 @@
-/* css file for signup/ login page */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
-/* work on the styling @message @developerRuq @Goldin @thrive */
+.logo-image {
+  width: 180px;
+  /* height: 66px; */
+
+  overflow: hidden;
+  margin-top: -6px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+nav {
+  background: rgb(255, 255, 255);
+  padding: 0px 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: rgb(63, 99, 197);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+}
+
+.menu li a {
+  display: block;
+}
+
+.logo a {
+  font-size: 20px;
+}
+
+.button.secondary {
+  border-bottom: 1px #444 solid;
+}
+
+/* mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  order: 1;
+}
+
+.item.button {
+  order: 2;
+}
+
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+
+.item.active {
+  display: block;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.bars {
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  width: 18px;
+}
+
+.bars::before,
+.bars::after {
+  background: #999;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  width: 18px;
+}
+
+.bars::before {
+  top: 5px;
+}
+
+.bars::after {
+  top: -5px;
+}
+
+/* tablet menu */
+
+@media all and (min-width: 468px) {
+  .menu {
+    justify-content: center;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+
+  .toggle {
+    order: 2;
+  }
+
+  .button.secondary {
+    border: 0;
+  }
+
+  .button a {
+    padding: 7px 15px;
+    background: rgb(63, 99, 197);
+    border: 1px solid rgb(63, 99, 197);
+    color: white;
+    border-radius: 50em;
+    text-decoration: none;
+  }
+
+  .button.secondary a {
+    background: transparent;
+    color: rgb(63, 99, 197);
+  }
+
+  .button a:hover {
+    transition: all 0.25s;
+  }
+
+  .button:not(.secondary) a:hover {
+    background: rgb(63, 99, 197);
+    border-color: rgb(89, 118, 197);
+  }
+}
+
+@media all and (min-width: 768px) {
+  .item {
+    display: block;
+    width: auto;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  .item {
+    order: 1;
+  }
+
+  .button {
+    order: 2;
+  }
+
+  .menu li {
+    padding: 15px 10px;
+  }
+
+  .menu li.button {
+    padding-right: 0;
+  }
+}
+/* END OF NAV BAR */
