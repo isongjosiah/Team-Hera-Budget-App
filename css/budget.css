@@ -1,3 +1,273 @@
 /* css file for budget page */
 
 /* work on the styling  @developerRuq @Goldin @thrive */
+
+{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.logo-image {
+  width: 180px;
+  /* height: 66px; */
+
+  overflow: hidden;
+  margin-top: -6px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+nav {
+  background: rgb(255, 255, 255);
+  padding: 0px 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: rgb(63, 99, 197);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+}
+
+.menu li a {
+  display: block;
+}
+
+.logo a {
+  font-size: 20px;
+}
+
+.button.secondary {
+  border-bottom: 1px #444 solid;
+}
+
+/* mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  order: 1;
+}
+
+.item.button {
+  order: 2;
+}
+
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+
+.item.active {
+  display: block;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.bars {
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  width: 18px;
+}
+
+.bars::before,
+.bars::after {
+  background: #999;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  width: 18px;
+}
+
+.bars::before {
+  top: 5px;
+}
+
+.bars::after {
+  top: -5px;
+}
+
+/* tablet menu */
+
+@media all and (min-width: 468px) {
+  .menu {
+    justify-content: center;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+
+  .toggle {
+    order: 2;
+  }
+
+  .button.secondary {
+    border: 0;
+  }
+
+  .button a {
+    padding: 7px 15px;
+    background: rgb(63, 99, 197);
+    border: 1px solid rgb(63, 99, 197);
+    color: white;
+    border-radius: 50em;
+    text-decoration: none;
+  }
+
+  .button.secondary a {
+    background: transparent;
+    color: rgb(63, 99, 197);
+  }
+
+  .button a:hover {
+    transition: all 0.25s;
+  }
+
+  .button:not(.secondary) a:hover {
+    background: rgb(63, 99, 197);
+    border-color: rgb(89, 118, 197);
+  }
+}
+
+@media all and (min-width: 768px) {
+  .item {
+    display: block;
+    width: auto;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  .item {
+    order: 1;
+  }
+
+  .button {
+    order: 2;
+  }
+
+  .menu li {
+    padding: 15px 10px;
+  }
+
+  .menu li.button {
+    padding-right: 0;
+  }
+}
+/* END OF NAV BAR */
+
+/* CONTAINER*/
+.container{
+    height: 100vh;
+}
+
+/*MIDDLE AND LAST GRID*/
+.colum{
+    background: linear-gradient(180deg, #3264B0 0%, #438AFC 92.12%);
+}
+
+/*MIDDLE GRID*/
+
+.jumbotron{
+
+    background: linear-gradient(180.02deg, #EBF5FF 0.03%, rgba(235, 245, 255, 0) 361.17%);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.jb {
+    background: linear-gradient(180deg, #EBF5FF 0%, rgba(235, 245, 255, 0) 247.21%);
+}
+
+
+/*item input*/
+
+.wrap{
+    text-align: center;
+    color: #FFFFFF;
+}
+
+input[type=number]{
+    width: 203.87px;
+    height: 39.66px;
+    left: 416.09px;
+    top: 292.77px;
+    margin-left: 30px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+span{
+    margin-right: 83px;
+}
+
+#dropdown{
+    margin-left: 63px;
+}
+
+input[type=text]{
+    width: 159px;
+    height: 23px;
+    left: 460px;
+    top: 602px;
+
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.item-button{
+    min-width: 121px;
+    min-height: 46px;
+    color: #FFFFFF;
+    left: 433px;
+    top: 351px;
+    background: linear-gradient(179.51deg, #3264B0 1.09%, #448FFD 126.56%);
+    box-shadow: 0px 0px 12px; 
+    rgba(0, 0, 0, 0.25);
+    border-radius: 24.5px;
+    margin-top: 20px;
+}
+
+/*image icons*/
+.img-fluid{
+    width: 15px;
+    height: 15px;
+}
