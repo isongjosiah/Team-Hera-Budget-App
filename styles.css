@@ -20,7 +20,7 @@
   -webkit-text-stroke: 1px black;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 4.0rem;
-  margin-top: 500px
+  margin-top: 300px
 }
 
 
@@ -39,7 +39,7 @@
   /* left: 0; */
   /* right: 0; */
   /* bottom: 0; */
-  background-color: rgba(0, 0, 0, 0.76);
+  background-color: white(0, 0, 0, 0.76);
   /* z-index: 2; */
   overflow: hidden;
 }
