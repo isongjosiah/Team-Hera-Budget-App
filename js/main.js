@@ -1,3 +1,4 @@
+// begining of js for nav bar
 const toggle = document.querySelector(".toggle");
 let items = document.querySelectorAll(".item");
 
@@ -10,3 +11,5 @@ toggle.addEventListener("click", function() {
     }
   });
 });
+
+// end of js for Nav Bar
