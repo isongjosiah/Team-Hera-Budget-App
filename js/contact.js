@@ -1,5 +1,3 @@
-/* js file for budget page */
-
 const toggle = document.querySelector(".toggle");
 let items = document.querySelectorAll(".item");
 
@@ -13,4 +11,4 @@ toggle.addEventListener("click", function() {
   });
 });
 
-//  the code above is for the nav bar
+// end of js for Nav
