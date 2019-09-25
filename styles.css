@@ -4,7 +4,7 @@
 
   width: 100%;
   display: flex;
-  margin-top: 63px;
+  margin-top: 5px;
   height: 70vh;
   color: white;
   align-items: center;
@@ -20,7 +20,7 @@
   -webkit-text-stroke: 1px black;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 4.0rem;
-  margin-top: 300px
+  margin-top: 350px
 }
 
 
@@ -61,7 +61,7 @@
 .team-item {
   border: 1px ridge grey;
   padding: 4px;
-  box-shadow: #999 2px 2px;
+  box-shadow: blue 2px 2px;
   /* background: #A4F2D8; */
   font-family: verdana;
   font-size: 17px;
