@@ -15,9 +15,10 @@
     <link rel="stylesheet" href="css/contact.css">
   </head>
 
-
   <body class = "">
     <div class="container-fluid">
+
+      <!--Header - navbar-->
       <header class = "row mx-auto pl-5">
         <nav class = "w-100">
     			<ul class="menu">
@@ -33,9 +34,12 @@
 
       </header>
 
+      <!--Main Content-->
+
       <main class = "row">
         <div class="col-12">
-
+          <!--First Row-->
+          <!--This row contains the contact us heading, other ways to contact us block and the vector graphic-->
           <div class="row">
             <div class="col-12 text-center text-lg-left col-lg-5 pl-lg-5">
               <div class="mb-lg-5" style = "width:auto">
@@ -75,6 +79,7 @@
             </div>
 
             <div class="col-12 col-lg-7 vector-container float-right ">
+              <!--if the user's screen is smaller than medium,the vector graphic will disappear and reappear under the "contact us heading" text-->
               <img class = "d-none d-md-block mb-5 w-100" id = "vector" src="Designs/contact-vector.svg" alt="vector illustration" height = 700>
               <div class="mx-auto mx-lg-0" id =  "form-container">
                 <h4 class = "text-center">CONTACT US</h4>
@@ -94,7 +99,8 @@
             </div>
           </div>
 
-          <!--SECOND ROW- OTHER WAYS-->
+          <!--SECOND ROW- this row only shows when the user's screen size is small, if the user is using a big screen it will disappear-->
+          <!--It is the same as the "Other ways to contact us" block, it just has a different position and appears when the other "Other ways to contact us" block disappears-->
           <div class="row mt-4">
             <div class="col-8 text-center mx-auto d-block d-lg-none">
               <h3 id = "other-ways" class = "contact-us">OTHER WAYS TO CONTACT US</h3>

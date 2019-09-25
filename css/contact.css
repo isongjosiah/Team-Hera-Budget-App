@@ -207,7 +207,6 @@ a:hover {
 }
 #address{
   color: #a7a7a7;
-
   width:auto;
 }
 #other-ways{
@@ -217,18 +216,6 @@ a:hover {
 #vector{
   position: relative;
   z-index: -2;
-}
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: red;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: red;
 }
 
 #form-container{
@@ -256,6 +243,7 @@ a:hover {
   }
 }
 
+  /*Background of contact form*/
 @media (max-width: 768px){
   #form-container{
     padding: 2em 2em;
