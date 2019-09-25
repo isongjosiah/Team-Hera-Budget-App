@@ -61,7 +61,7 @@
 .team-item {
   border: 1px ridge grey;
   padding: 4px;
-  box-shadow: blue 2px 2px;
+  box-shadow: #999 2px 2px;
   /* background: #A4F2D8; */
   font-family: verdana;
   font-size: 17px;
