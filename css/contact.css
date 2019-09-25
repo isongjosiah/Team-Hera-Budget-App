@@ -214,15 +214,16 @@ a:hover {
   font-weight: 400;
 }
 #vector{
-  position: relative;
+
   z-index: -2;
 }
 
 #form-container{
   width: 60%;
-}
 
 }
+
+
 #form-container input{
   font-size: 65%;
 }
@@ -232,11 +233,31 @@ a:hover {
   font-weight: 300;
 }
 
+#send{
+  background: linear-gradient(90deg, #5382EC 0%, #78BFFF 100%);
+  color: #fff;
+  padding: 0.6em 4em;
+  position: absolute;
+  border-radius: 40px;
+  border:0;
+  cursor: pointer;
+
+  right:10%;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+#send:hover{
+
+  background: linear-gradient(90deg, #0C57FF 0%, #38A1FF 100%);
+}
+
+
 /*media queries for the form*/
 @media (min-width: 768px){
   #form-container{
-    left:23.2rem;
-    bottom:13.5rem;
+    right:27%;
+    bottom:25.3%;
     position: absolute;
     width:33%;
     z-index:2;
@@ -245,6 +266,12 @@ a:hover {
 
   /*Background of contact form*/
 @media (max-width: 768px){
+form{
+  height: 80%;
+}
+  #send{
+    position: static;
+  }
   #form-container{
     padding: 2em 2em;
     background: linear-gradient(0deg, #FFD5A7 0%, #FFD7AA 37.2%, #FFDDB3 65.4%, #FFE8C3 90.7%, #FFEECC 100%);
