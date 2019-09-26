@@ -69,9 +69,10 @@ h5{
 
 }
 .budget-icon{
-background: linear-gradient(180deg, #3264b0 0%, #438afc 92.12%);
-border-radius: 50%;
-padding: 6px;
+  background: linear-gradient(180deg, #3264b0 0%, #438afc 92.12%);
+  border-radius: 50%;
+  padding: 6px;
+  text-transform: uppercase;
 }
 th{
   color: linear-gradient(180deg, #3264b0 0%, #438afc 92.12%);
@@ -100,4 +101,14 @@ li{
 .dashboad_nav li{
   line-height: 1.9;
 }
+
+#budgetResponseMessage, #expenseResponseMessage{
+  color: red;
+  font-size: 10px;
+}
+#addedExpenseResponseMessage, #addedBudgetResponseMessage{
+  color: green;
+  font-size: 10px;
+}
+
 /* end of css for navbar */
