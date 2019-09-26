@@ -55,7 +55,9 @@ addExpenseForm.addEventListener("submit", (event) => {
 	console.log(priority);
 
 	if (!expenseName) {
-	  expenseResponseMessage.append('Please, enter a budget.');
+		if(!expenseResponseMessage.innerText){ 
+			expenseResponseMessage.append('Please, enter a budget title.');
+      	}
 	} else {
 	  const newExpense = {expenseName, priority }
 	  expenseArray.push(newExpense);
