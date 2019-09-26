@@ -11,6 +11,10 @@
     <meta name="author" content="Team_Hera" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Welcome To Hera</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link
       rel="icon"
       href="img/logo (2).png"
@@ -22,52 +26,80 @@
   </head>
 
   <body>
-    <!-- begining of nav bar PLEASE DOONT EDIT -->
-    <nav>
-      <ul class="menu">
-        <li class="logo">
-          <a href="index.html"
-            ><img
-              class="logo-image"
-              src="https://res.cloudinary.com/cramwordplay/image/upload/v1569362293/logo_normal_iwm3jk.png"
-              class="img-fluid"
-          /></a>
-        </li>
-        <li class="item"><a href="index.html"> Home</a></li>
 
-        <li class="item"><a href="budget.html"> Dashboard</a></li>
-        <li class="item"><a href="team.html"> Meet The Team</a></li>
-        <li class="item"><a href="contact.html"> Contact Us</a></li>
-        <li class="item button"><a href="signin.html"> Login</a></li>
-        <li class="item button secondary">
-          <a href="signin.html"> Sign Up</a>
-        </li>
-        <li class="toggle"><span class="bars"></span></li>
-      </ul>
-    </nav>
+    <div class="container-fluid">
+      <header class="row">
+        <!-- begining of nav bar PLEASE DON'T EDIT -->
+        <nav class = "col-12 mx-auto">
+          <ul class="menu">
+            <li class="logo">
+              <a href="index.html"
+                ><img
+                  class="logo-image"
+                  src="https://res.cloudinary.com/cramwordplay/image/upload/v1569362293/logo_normal_iwm3jk.png"
+                  class="img-fluid"
+              /></a>
+            </li>
+            <li class="item"><a href="index.html"> Home</a></li>
 
-    <!-- end of NAV BAR DONT EDIT  -->
-    <script src="js/main.js"></script>
-<section id="message">
-<div class="message">
-<div class="topmessage">
-<h1>Set Goals but FIRST, make them frequent Habits</h1>
-</div>
-<div class="submessage">People get things done not just from setting lofty goals, but first committing to habits. What started as a means to help you stay true to financial goals birthed a smart, inuitive app that not only helps you reach these goals, but helps make them second-nature habits.<br><br><br>
-<hr>
-<button>Meet the Team</button>
-<hr>
-<br><br>
-<div class="topmessage"><h1>Our Goal?</h1></div>
-<p>Hera drives the true essence of financial accountability by helping you budget not just efficiently, but also smartly and consistently.</p>
-<p>When you choose Hera, you choose Financial Responsibility.</p>
+            <li class="item"><a href="budget.html"> Dashboard</a></li>
+            <li class="item"><a href="team.html"> Meet The Team</a></li>
+            <li class="item"><a href="contact.html"> Contact Us</a></li>
+            <li class="item button"><a href="signin.html"> Login</a></li>
+            <li class="item button secondary">
+              <a href="signin.html"> Sign Up</a>
+            </li>
+            <li class="toggle"><span class="bars"></span></li>
+          </ul>
+        </nav>
+                  <!-- end of NAV BAR DONT EDIT  -->
+      </header>
 
-</div>
-</div>
-<div class="message2">
-<img src="img/Vector.png">
-</div>
-</section>
-</main>
-</body>
+      <main class = "row">
+        <div class="col-8 pl-5 d-flex vector-container pr-0">
+
+        </div>
+
+        <div class="col-4 TextColumn p-0">
+            
+        </div>
+      </main>
+    </div>
+  <script src="js/main.js"></script>
+  </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="submessage mb-3">
+  People get things done not just from setting lofty goals, but first committing to habits.
+  What started as a means to help you stay true to financial goals birthed a smart, inuitive app that not only helps you reach these goals,
+  but helps make them second-nature habits.
+</div>
+
+<div class="mb-5">
+  <a href="team.html" class = "meet-team text-white">Meet the Team</a>
+</div>
+
+<div class="topmessage">
+    <h1>Our Goal?</h1>
+</div>
+<div class="">
+    <p>Hera drives the true essence of financial accountability by helping you budget not just efficiently, but also smartly and consistently.</p>
+    <p>When you choose Hera, you choose Financial Responsibility.</p>
