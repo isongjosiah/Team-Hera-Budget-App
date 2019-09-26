@@ -19,76 +19,179 @@
 </head>
   <body>
     <!--work on the html @message @developerRuq @Goldin @thrive-->
-      <nav>
-			<ul class="menu">
-				<li class="logo"><a href="#"><img class="logo-image" src="/Designs/logo normal.png" class="img-fluid"></a></li>
-        <li class="item"><a href="index.html"> Home</a></li>
-       
-        <li class="item"><a href="budget.html"> Dashboard</a></li>
-        <li class="item"><a href="team.html"> Meet The Team</a></li>
-        <li class="item"><a href="contact.html"> Contact Us</a></li>
-        <li class="item button"><a href="signin.html"> Login</a></li>
-        <li class="item button secondary"><a href="#"> Sign Up</a></li>
-				<li class="toggle"> <span class="bars"></span></li>
-			</ul>
-		</nav>
-      <!--grid layout-->
-      <div class="container">
-          <div class="row">
-              
-            <!--left grid-->  
-            <div class="col-sm-2">
-                    <!--<img class="logo-image" src="/Designs/logo normal.png" class="img-fluid">-->
-                    <p><img src="img/brick.png" class="img-fluid mr-1" alt="brick-icon">Dashboard</p>
-                    <div>
-                       <p><img src="img/budg.png" class="img-fluid"> Budget</p>
-                            <ul>
-                                <li>New Budget</li>
-                                <li>Budget History</li>
-                            </ul>
-                    </div>
-                <p><a href="#"><img src="img/logout.png" class="img-fluid">Logout</a></p>
-            </div>
-          
-              
-          <!--middle-grid-->
-            <div class="col-sm-4 colum text-center">
-                <h1 class="font-weight-bolder text-white mt-5">NEW BUDGET</h1>
-                <div class="jumbotron">
-                    <h4 class="font-weight-bold pt-1 text-left">Income</h4>
-                    <form action="#" class="needs-validation form-group" novalidate>
-                        <label for="naira"><img src="img/Naira.png" alt="naira symbol"><input type="number" name="income"> </label><br>
-                        <div class="wrap"><input type="submit" class="item-button" name="submit" value="SUBMIT"></div>
-                    </form>
-                </div>
-                
-                <div class="jumbotron jb">
-                    <h4 class="font-weight-bold pt-1 text-left">Enter Budget</h4>
-                    <label for="naira"><img src="img/Naira.png" alt="naira symbol"><input type="number" name="income"> </label>
-                    <label for="naira"><span>Item</span><input type="text"  name="income"> </label><br>
-                    <span>Priority Level</span><select id ="dropdown" name="CurrentPos">
-                            <option disabled value>0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option> 
-                    </select>
-                    
-                   <div class="wrap"><input type="submit" class="item-button" name="submit" value="SUBMIT"></div>
-                </div>
-                <div class="wrap"><input type="submit" class="item-button mb-5" name="submit" value="CALCULATE BUDGET"></div>
-            </div>
-              
-            <!--RIGHT GRID-->
-          <div class="col-sm-6 colum">
-              <p><input type="text"  name="income"></p>
-              jnruyubvyvbubvubvuvbubvuvuburivbuus
+    <div class="container-fluid">
+      <div class="row">
+        <div class="side-pane col-sm-2 col-md-2">
+          <img class="budget-logo" src="img/logo normal.png">
+          <br>
+          <br>
+          <ul class="dashboad_nav">
+            <li> <img class="dashboard_icon" src="img/brick.png"> <a class="dashboard_link" href=""> Dashboard</a></li>
+            <li> <img class="dashboard_icon" src="img/budg.png"> <a class="dashboard_link" href=""> Budget</a>
+              <ul>
+                <li> <a  class="dashboard_link small" href=""> New Budget</a> </li>
+                <li> <a class="dashboard_link small" href="" > Budget History</a> </li>
+              </ul>
+            </li>
+           <li> <img class="dashboard_icon" src="img/logout.png"> <a class="dashboard_link" href=""> Log Out</a></li>
+          </ul>
         </div>
-      
-      </div>
-    </div>
 
-    <script src="/Js/budget.js"></script>
+
+        <div class=" budget-board col-md-10">
+          <div class="container">
+            <div class="row">
+            <div class="col-md-10">
+            <h3>NEW BUDGET</h3>
+
+            </div>
+            <div class="col-md-2">
+              <div class="name-tag">
+                 <img class="user-img" src="https://randomuser.me/api/portraits/men/62.jpg"> Nma. Okezie
+               </div>
+            </div>
+          </div>
+
+         <div class="row budget-panel">
+            <div class="col-md-3">
+              <div class="card">
+                <h5>Income</h5>
+               <form>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-2 offset-1">
+                      <img class="naira-symbol" src="img/Naira.png" alt="naira symbol">
+
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" id="" placeholder="250,000">
+                      <br>
+                      <button class="btn btn-primary submit-btn">SUBMIT</button>
+                    </div>
+                  </div>
+                </div>
+                </form>
+              </div>
+              <br><br>
+
+               <div class="card">
+                <h5>Enter Budget</h5>
+               <form>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-10 offset-1">
+                      <input type="text" class="form-control" id="" placeholder="Item">
+                      <br>
+                    </div>
+
+
+                    </div>
+
+                      <div class="form-group">
+                        <div class="row">
+                        <div class="col-md-5 offset-1">
+                          <span class="priority">Priority Level </span>
+                        </div>
+                        <div class="col-md-4">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 offset-2">
+                         <button class="btn btn-primary submit-btn">SUBMIT</button>
+
+                      </div>
+                    </div>
+                    </div>
+                      </form>
+                  </div>
+                  <br>
+                  <br>
+
+                   <div>
+                         <button class="btn btn-primary submit-btn">CALCULATE BUDGET</button>
+
+                  </div>
+
+
+                </div>
+
+                <div class="col-md-9 budget-list-card">
+                  <div class="card">
+                    <table class="table">
+                      <thead class="thead-light">
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Item</th>
+                          <th scope="col">Priority</th>
+                          <th scope="col">Amount</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th > <span class="budget-icon"> TV</span> </th>
+                          <td>Travel</td>
+                          <td>3</td>
+                          <td>3,000</td>
+                        </tr>
+                        <tr>
+                          <th > <span class="budget-icon"> TV</span> </th>
+                          <td>Travel</td>
+                          <td>3</td>
+                          <td>3,000</td>
+                        </tr>
+                        <tr>
+                          <th > <span class="budget-icon"> TV</span> </th>
+                          <td>Travel</td>
+                          <td>3</td>
+                          <td>3,000</td>
+                        </tr>
+                        <tr>
+                          <th > <span class="budget-icon"> TV</span> </th>
+                          <td>Travel</td>
+                          <td>3</td>
+                          <td>3,000</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                  <br><br><br>
+
+                   <div>
+                         <button class="btn btn-primary submit-btn">SAVE BUDGET</button>
+
+                  </div>
+
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script type="text/javascript" src="/js/budget.js"></script>
   </body>
 </html>
