@@ -1,0 +1,43 @@
+body{
+  font-family: Segoe UI;
+}
+
+
+
+.vector-container{
+/*  border: 1px solid #000;*/
+}
+.TextColumn{
+  padding-top: 10%;
+}
+h1{
+  line-height: 0.85em;
+}
+.subtext{
+  color: #4D4D4D;
+  font-size: 1.1em;
+}
+
+#hera{
+  color: #3264B0;
+  font-size: 3em;
+  font-weight: 300;
+}
+#budget{
+  font-size: 5em;
+  color: #438AFC;
+  font-weight: 300;
+}
+
+#get-started{
+  color: #fff;
+  font-size: 200;
+  padding: 1em 2.6em;
+  background-color:#FD725E;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#get-started:hover{
+  text-decoration: none;
+}
