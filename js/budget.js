@@ -25,11 +25,16 @@ addBudgetForm.addEventListener("submit", (event) => {
 
 
     if (!userBudget || userBudget === "" || userBudget === null) {
-      budgetResponseMessage.append('Please, enter a budget.');
+      if(!budgetResponseMessage.innerText){
+      	budgetResponseMessage.append('Please, enter a budget.');
+      }
     } else {
-    	budgetResponseMessage.remove();
+    	budgetResponseMessage.textContent = null;
     	// send Success Message
     	addedBudgetResponseMessage.append('Budget added.');
+    	document.getElementById("userbudget").setAttribute('readonly', true);
+    	document.getElementById("budgetButton").setAttribute('disabled', true);
+
 
       // initiate new budget
 	  const budgetValue = parseInt(userBudget);
@@ -41,8 +46,8 @@ addBudgetForm.addEventListener("submit", (event) => {
 
 //   Adding New Expense
 addExpenseForm.addEventListener("submit", (event) => {
-
 	event.preventDefault();
+
 	let expenseName = document.querySelector("#expensename").value;
 	const priorities = document.querySelector("#priorities");
 	let priority = priorities.options[priorities.selectedIndex].value;
@@ -54,18 +59,18 @@ addExpenseForm.addEventListener("submit", (event) => {
 	} else {
 	  const newExpense = {expenseName, priority }
 	  expenseArray.push(newExpense);
-      expenseResponseMessage.remove();
+      expenseResponseMessage.textContent = null;
 	  // Send Success MEssage
 	  addedExpenseResponseMessage.append(`Added "${expenseName}" to Budget.`);
 	  // console.log(expenseArray);
 	
 	  expenseName = document.querySelector("#expensename")
-	  expenseName.value = " ";
+	  expenseName.value = null;
 	  expenseName = null; 
 
-	//   setTimeout(function(){
-	//   	addedExpenseResponseMessage.textContent = " ",
-	// }, 3000);
+	  setTimeout(function(){
+	  	addedExpenseResponseMessage.textContent = null;
+	}, 1000);
 	 
 	}
 });
@@ -88,8 +93,7 @@ const calculateBudget = async () => {
     })
 
      await expenseArray.map((expense) => {
-     	expense._id = expense.expenseName.slice(0, 2);
-      // totalInversePriority = eval(parseInt(totalInversePriority) +  parseInt(expense.inversePriority));
+     	expense._id = expense.expenseName.trim().slice(0, 2);
     })
 
 

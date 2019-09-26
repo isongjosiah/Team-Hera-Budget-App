@@ -30,8 +30,8 @@
             <li> <img class="dashboard_icon" src="img/brick.png"> <a class="dashboard_link" href=""> Dashboard</a></li>
             <li> <img class="dashboard_icon" src="img/budg.png"> <a class="dashboard_link" href=""> Budget</a>
               <ul>
-                <li> <a  class="dashboard_link small" href=""> New Budget</a> </li>
-                <li> <a class="dashboard_link small" href="" > Budget History</a> </li>
+                <li> <a  class="dashboard_link small" href="budget.html"> New Budget</a> </li>
+                <li> <a class="dashboard_link small" href="budgethistory.html" > Budget History</a> </li>
               </ul>
             </li>
            <li> <img class="dashboard_icon" src="img/logout.png"> <a class="dashboard_link" href=""> Log Out</a></li>
@@ -65,11 +65,13 @@
 
                     </div>
                     <div class="col-md-8">
-                      <span id="budgetResponseMessage" >  </span>
-                      <span id="addedBudgetResponseMessage"> </span>
+                      
                       <input type="number" class="form-control"  name="userbudget" id="userbudget" placeholder="E.g 250,000">
+                      <span id="addedBudgetResponseMessage"> </span>
+                      <span id="budgetResponseMessage" >  </span>
+<br>
                       <br>
-                      <button type="submit" class="btn btn-primary submit-btn">SUBMIT</button>
+                      <button id="budgetButton" type="submit" class="btn btn-primary submit-btn">SUBMIT</button>
                     </div>
                   </div>
                 </div>
