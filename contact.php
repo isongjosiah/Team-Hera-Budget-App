@@ -1,3 +1,7 @@
+<?php require('header.php') ?>
+<?php if(isset($_SESSION['username'])){
+
+echo'
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,12 +27,12 @@
         <nav class = "w-100">
     			<ul class="menu">
     				<li class="logo"><a href="#"><img class="logo-image" src="Designs/logo normal.png" class="img-fluid"></a></li>
-          <li class="item"><a href="index.html"> Home</a></li>
+          <li class="item"><a href="index.php"> Home</a></li>
           
-          <li class="item"><a href="budget.html"> Dashboard</a></li>
-          <li class="item"><a href="team.html"> Meet The Team</a></li>
-          <li class="item"><a href="contact.html"> Contact Us</a></li>
-          <li class="item button"><a href="signin.html"> Login</a></li>
+          <li class="item"><a href="budget.php"> Dashboard</a></li>
+          <li class="item"><a href="team.php"> Meet The Team</a></li>
+          <li class="item"><a href="contact.php"> Contact Us</a></li>
+          <li class="item button"><a href="signin.php"> Login</a></li>
           <li class="item button secondary"><a href="#"> Sign Up</a></li>
     				<li class="toggle"> <span class="bars"></span></li>
     			</ul>
@@ -143,5 +147,7 @@
 
 
 <script src="/js/contact.js"></script>
-  </body>
+  </body>';} else {
+    echo '<h1>Please<a href= "signup.php">Login</a> To continue</h1>';
+  }
 </html>

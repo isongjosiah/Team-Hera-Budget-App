@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   	<head>
@@ -39,26 +40,26 @@
 					<div class="tab-content" id="myTabContent">
 						<!-- signin tab -->
 					  	<div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="signin-tab">
-						  	<form class="form-signin" id="login">
+						  	<form class="form-signin" id="login" action = "./src/login.php" method="POST">
 						  		<div class="input-group mb-3">
 								  	<div class="input-group-prepend">
 								    	<span class="input-group-text bg-white border-right-0 rounded-left" id="basic-addon1"><i class="fas fa-envelope-open-text"></i></span>
 								  	</div>
-								  	<input type="email" name= "username" id="inputEmail" class="form-control border-left-0" placeholder="Email address" aria-label="Email address" aria-describedby="basic-addon1" required>
+								  	<input type="email" name= "username" id="inputEmail" class="form-control border-left-0" placeholder="Email address" aria-label="Email address" aria-describedby="basic-addon1" name= "name" required>
 								<div class="feedback"></div>
 								</div>
 								<div class="input-group mb-3">
 								  	<div class="input-group-prepend">
 								    	<span class="input-group-text bg-white border-right-0" id="basic-addon2"><i class="fas fa-lock"></i></span>
 								  	</div>
-								  	<input type="password" id="inputPassword" class="form-control border-left-0" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+								  	<input type="password" id="inputPassword" class="form-control border-left-0" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" name="password" required>
 								</div>
 								<div class="checkbox">
 									<label>
 										<input type="checkbox" value="remember-me"> Keep me Signed in
 									</label>
 								</div>
-							  	<button class="btn btn-primary btn-block rounded-pill" type="submit" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+							  	<button class="btn btn-primary btn-block rounded-pill" type="submit" id="loginBtn" name="login-submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
 							</form>
 							<div class="text-center">
 								<p class="text-center my-1">or Login in with</p>
@@ -79,50 +80,50 @@
 
 					  <!-- Sign up tab -->
 					  <div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="signup-tab">
-					  	<form class="form-signup" id="register">
+					  	<form class="form-signup" id="register" method="POST" action= "./src/process.php">
 					  		<div class="form-row">
 							    <div class="form-group col-md-6">
-							      <input type="text" class="form-control rounded-pill" id="regFirstName" placeholder="First Name" required>
+							      <input type="text" class="form-control rounded-pill" id="regFirstName" placeholder="First Name" required name="firstname">
 							    </div>
 							    <div class="form-group col-md-6">
-							      <input type="text" class="form-control rounded-pill" id="regLastName" placeholder="Last Name" required>
+							      <input type="text" class="form-control rounded-pill" id="regLastName" placeholder="Last Name" name="lastname" required>
 							    </div>
 							</div>
 
 							<div class="form-group">
-							    <input type="text" class="form-control rounded-pill" id="regUserName" placeholder="User Name" required>
+							    <input type="text" class="form-control rounded-pill" id="regUserName" placeholder="User Name" name="username" required>
 							</div>
 							<div class="form-group">
-							    <input type="tel" class="form-control rounded-pill" id="regPhone" placeholder="Phone Number" required>
+							    <input type="tel" class="form-control rounded-pill" id="regPhone" placeholder="Phone Number" name="phonenumber" required>
 							</div>
 							<div class="form-group">
-							    <input type="email" class="form-control rounded-pill" id="regEmail" placeholder="Email address" required>
+							    <input type="email" class="form-control rounded-pill" id="regEmail" placeholder="Email address" name="email" required>
 							</div>
 
 							<div class="form-row">
 							    <div class="form-group col-md-6">
-							      	<input type="password" class="form-control rounded-pill" id="regInputPassword" placeholder="Password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[~`!@#$%^&*()\-_+={};:\[\]\?\.\\/,]).{6,}" title="Password must contain a capital letter,  a special character and a digit. Password length must be minimum 6 characters." autocomplete="off">
+							      	<input type="password" class="form-control rounded-pill" id="regInputPassword" placeholder="Password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[~`!@#$%^&*()\-_+={};:\[\]\?\.\\/,]).{6,}" title="Password must contain a capital letter,  a special character and a digit. Password length must be minimum 6 characters." autocomplete="off" name="password_1">
 							    </div>
 							    <div class="form-group col-md-6">
-							      	<input type="password" class="form-control rounded-pill" id="confirmPassword" placeholder="Confirm password" title="Passwords must match" required>
+							      	<input type="password" class="form-control rounded-pill" id="confirmPassword" placeholder="Confirm password" title="Passwords must match" name="password_2" required>
 							    </div>
 							</div>
 
 							<div class="form-group">
 							    <div class="form-check form-check-inline px-0 mx-0">
-								  	<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+								  	<input class="form-check-input" type="radio" id="inlineCheckbox1" value="male" name="gender">
 								  	<label class="form-check-label" for="inlineCheckbox1">Male</label>
 								</div>
 								<div class="form-check form-check-inline px-0 mx-0">
-								  	<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+								  	<input class="form-check-input" type="radio" id="inlineCheckbox2" value="female" name="gender">
 								  	<label class="form-check-label" for="inlineCheckbox2">Female</label>
 								</div>
 								<div class="form-check form-check-inline px-0 mx-0">
-								  	<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+								  	<input class="form-check-input" type="radio" id="inlineCheckbox3" value="notspecified" name="gender">
 								  	<label class="form-check-label" for="inlineCheckbox3">Not specified</label>
 								</div>
 							</div>
-							  <button type="submit" class="btn btn-primary btn-block rounded-pill" id="regBtn"><i class="fas fa-user-plus"></i> Register</button>
+							  <button type="submit" class="btn btn-primary btn-block rounded-pill" id="regBtn" name="register-submit"><i class="fas fa-user-plus"></i> Register</button>
 					  	</form>
 					  </div>
 					</div>
@@ -136,6 +137,7 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" type="text/javascript"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" type="text/javascript"></script>
-	    <script src="js/signin.js" type="text/javascript"></script>
+	    <!-- <script src="js/signin.js" type="text/javascript"></script> -->
   	</body>
 </html>
+
