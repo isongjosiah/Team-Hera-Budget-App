@@ -78,4 +78,18 @@
         }
     }
 
+//Details from of contact person
+
+$cusName = mysqli_real_escape_string($db, $_POST['cusname']);
+$cusEmail = mysqli_real_escape_string($db, $_POST['cusemail']);
+$cusMsg = mysqli_real_escape_string($db, $_POST['cusmsg']);
+
+$query = "INSERT INTO contact (name, email, message) VALUES('$cusName', '$cusEmail', '$cusMsg')";
+            mysqli_query($db, $query);
+
+
+        header('Location: contact.html');
+
+
+
 ?>
