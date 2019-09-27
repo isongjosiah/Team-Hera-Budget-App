@@ -85,6 +85,7 @@ li{
 .dashboard_icon{
   width: 20px;
   height: auto;
+  filter: grayscale(1);
 }
 .dashboard_link{
   text-decoration: none;
@@ -97,6 +98,9 @@ li{
   text-decoration: none;
   border-bottom: 2px solid #3264b0;
 
+}
+.small_link{
+  margin-left: 30px !important;
 }
 .dashboad_nav li{
   line-height: 1.9;
