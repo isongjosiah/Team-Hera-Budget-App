@@ -280,4 +280,7 @@ form{
   #form-container{
     width: 90%;
   }
+  .contact-us{
+    font-size:300%;
+  }
 }
