@@ -15,6 +15,7 @@ const expenseArray = [];
 let Budget ={}
 let userBudget; 
 let totalBudget;
+let balance;
 
 
 
@@ -81,6 +82,7 @@ addExpenseForm.addEventListener("submit", (event) => {
 const calculateBudget = async () => {
     let totalPriority = 0;
     let totalInversePriority = 0;
+    let totalFundAllocated = 0;
 
     await expenseArray.map((expense) => {
       totalPriority = eval(parseInt(totalPriority) + parseInt(expense.priority));
@@ -102,17 +104,24 @@ const calculateBudget = async () => {
     await expenseArray.map((expense) => {
       const {inversePriority} = expense;
       // console.log(inversePriority, totalPriority);
-      expense.fundAllocated = Math.floor(eval((parseInt(inversePriority) / parseInt(totalInversePriority) ) * parseInt(Budget.totalBudget)));
+      calculateFundAllocated = Math.floor(eval((parseInt(inversePriority) / parseInt(totalInversePriority) ) * parseInt(Budget.totalBudget)));
+      const FundsAllocated = roundDown(calculateFundAllocated, 100);
+      totalFundAllocated = eval(parseInt(totalFundAllocated) + parseInt(FundsAllocated));
+
+      const styledFundsAllocated = FundsAllocated.toLocaleString();
+      expense.fundAllocated = styledFundsAllocated;
     })
-     renderExpenses(expenseArray);
-  return expenseArray;
+     balance = eval(parseInt(Budget.totalBudget) - parseInt(totalFundAllocated));
+     renderExpenses(expenseArray, balance);
+
+  return;
 }
 
 // Start Calculating 
 calculateBtn.addEventListener('click', calculateBudget);
 
 
-const renderExpenses = (array) => {
+const renderExpenses = (array, balance) => {
   for (expense in array){
     const tr = document.createElement("tr");
   	// let _id = array[expense].expenseName.slice(0 , 1);
@@ -121,17 +130,39 @@ const renderExpenses = (array) => {
     <td> <span class="budget-icon"> ${array[expense]._id}  </span> </td>
     <td> ${array[expense].expenseName}  </td>
     <td> ${array[expense].priority}  </td>
-    <td> ${array[expense].fundAllocated}  </td>
+    <td> ₦ ${array[expense].fundAllocated}  </td>
+    <hr>
     `
-    console.log(tr);
+    // console.log(tr);
 
     table.append(tr);
     // _id = " "
-    console.log(array[expense]);
+    // alert(balance)
+    // console.log(array[expense]);
+  }
+  if (balance){
+  	const tr = document.createElement("tr");
+  
+    tr.innerHTML = `
+    <td> </td>
+    <td> </td>
+    <td> <b> BALANCE </b>  </td>
+    <td> ₦ ${balance}  </td>`
+
+    table.append(tr);
+  }else{
+  	// Do nothing ;
   }
 }
 
 
+
+
+const roundDown =  (num, precision) => {
+    num = parseFloat(num); 
+    if (!precision) return num.toLocaleString();
+    return (Math.floor(num / precision) * precision)
+};
 
 // const toggle = document.querySelector(".toggle");
 // let items = document.querySelectorAll(".item");
