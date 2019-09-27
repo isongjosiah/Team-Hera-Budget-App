@@ -1,16 +1,180 @@
 /* js file for budget page */
 
-const toggle = document.querySelector(".toggle");
-let items = document.querySelectorAll(".item");
+const addBudgetForm = document.getElementById("budgetform");
+const budgetResponseMessage = document.getElementById('budgetResponseMessage');
+const expenseResponseMessage = document.getElementById('expenseResponseMessage');
+const addedBudgetResponseMessage = document.getElementById('addedBudgetResponseMessage');
+// const addedExpenseResponseMessage document.getElementById('addedExpenseResponseMessage');
 
-toggle.addEventListener("click", function() {
-  items.forEach(item => {
-    if (item.style.display == "") {
-      item.style.display = "block";
+const addExpenseForm = document.querySelector("#expenseform");
+const calculateBtn = document.getElementById('calculate');
+const table = document.getElementById('table');
+
+
+const expenseArray = [];
+let Budget ={}
+let userBudget; 
+let totalBudget;
+let balance;
+
+
+
+ //  Adding New Budget
+addBudgetForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    userBudget =  document.getElementById("userbudget").value;
+
+
+    if (!userBudget || userBudget === "" || userBudget === null) {
+      if(!budgetResponseMessage.innerText){
+      	budgetResponseMessage.append('Please, enter a budget.');
+      }
     } else {
-      item.style.display = "";
+    	budgetResponseMessage.textContent = null;
+    	// send Success Message
+    	addedBudgetResponseMessage.append('Budget added.');
+    	document.getElementById("userbudget").setAttribute('readonly', true);
+    	document.getElementById("budgetButton").setAttribute('disabled', true);
+
+
+      // initiate new budget
+	  const budgetValue = parseInt(userBudget);
+      Budget.totalBudget = budgetValue
     }
-  });
 });
+
+
+
+//   Adding New Expense
+addExpenseForm.addEventListener("submit", (event) => {
+	event.preventDefault();
+
+	let expenseName = document.querySelector("#expensename").value;
+	const priorities = document.querySelector("#priorities");
+	let priority = priorities.options[priorities.selectedIndex].value;
+	console.log(expenseName);
+	console.log(priority);
+
+	if (!expenseName) {
+		if(!expenseResponseMessage.innerText){ 
+			expenseResponseMessage.append('Please, enter a budget title.');
+      	}
+	} else {
+	  const newExpense = {expenseName, priority }
+	  expenseArray.push(newExpense);
+      expenseResponseMessage.textContent = null;
+	  // Send Success MEssage
+	  addedExpenseResponseMessage.append(`Added "${expenseName}" to Budget.`);
+	  // console.log(expenseArray);
+	
+	  expenseName = document.querySelector("#expensename")
+	  expenseName.value = null;
+	  expenseName = null; 
+
+	  setTimeout(function(){
+	  	addedExpenseResponseMessage.textContent = null;
+	}, 1000);
+	 
+	}
+});
+
+// Calculate Budget
+const calculateBudget = async () => {
+    let totalPriority = 0;
+    let totalInversePriority = 0;
+    let totalFundAllocated = 0;
+
+    await expenseArray.map((expense) => {
+      totalPriority = eval(parseInt(totalPriority) + parseInt(expense.priority));
+    });
+
+    await expenseArray.map((expense) => {
+      expense.inversePriority = eval(parseInt(totalPriority) - expense.priority);
+    });
+
+    await expenseArray.map((expense) => {
+      totalInversePriority = eval(parseInt(totalInversePriority) +  parseInt(expense.inversePriority));
+    })
+
+     await expenseArray.map((expense) => {
+     	expense._id = expense.expenseName.trim().slice(0, 2);
+    })
+
+
+    await expenseArray.map((expense) => {
+      const {inversePriority} = expense;
+      // console.log(inversePriority, totalPriority);
+      calculateFundAllocated = Math.floor(eval((parseInt(inversePriority) / parseInt(totalInversePriority) ) * parseInt(Budget.totalBudget)));
+      const FundsAllocated = roundDown(calculateFundAllocated, 100);
+      totalFundAllocated = eval(parseInt(totalFundAllocated) + parseInt(FundsAllocated));
+
+      const styledFundsAllocated = FundsAllocated.toLocaleString();
+      expense.fundAllocated = styledFundsAllocated;
+    })
+     balance = eval(parseInt(Budget.totalBudget) - parseInt(totalFundAllocated));
+     renderExpenses(expenseArray, balance);
+
+  return;
+}
+
+// Start Calculating 
+calculateBtn.addEventListener('click', calculateBudget);
+
+
+const renderExpenses = (array, balance) => {
+  for (expense in array){
+    const tr = document.createElement("tr");
+  	// let _id = array[expense].expenseName.slice(0 , 1);
+    // console.log(array[expense]);
+    tr.innerHTML = `
+    <td> <span class="budget-icon"> ${array[expense]._id}  </span> </td>
+    <td> ${array[expense].expenseName}  </td>
+    <td> ${array[expense].priority}  </td>
+    <td> ₦ ${array[expense].fundAllocated}  </td>
+    <hr>
+    `
+    // console.log(tr);
+
+    table.append(tr);
+    // _id = " "
+    // alert(balance)
+    // console.log(array[expense]);
+  }
+  if (balance){
+  	const tr = document.createElement("tr");
+  
+    tr.innerHTML = `
+    <td> </td>
+    <td> </td>
+    <td> <b> BALANCE </b>  </td>
+    <td> ₦ ${balance}  </td>`
+
+    table.append(tr);
+  }else{
+  	// Do nothing ;
+  }
+}
+
+
+
+
+const roundDown =  (num, precision) => {
+    num = parseFloat(num); 
+    if (!precision) return num.toLocaleString();
+    return (Math.floor(num / precision) * precision)
+};
+
+// const toggle = document.querySelector(".toggle");
+// let items = document.querySelectorAll(".item");
+
+// toggle.addEventListener("click", function() {
+//   items.forEach(item => {
+//     if (item.style.display == "") {
+//       item.style.display = "block";
+//     } else {
+//       item.style.display = "";
+//     }
+//   });
+// });
 
 //  the code above is for the nav bar
