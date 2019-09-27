@@ -20,11 +20,11 @@ h1{
 
 #hera{
   color: #3264B0;
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 300;
 }
 #budget{
-  font-size: 5em;
+  font-size: 5rem;
   color: #438AFC;
   font-weight: 300;
 }
@@ -40,4 +40,26 @@ h1{
 
 #get-started:hover{
   text-decoration: none;
+  background-color: #FE5A43;
+}
+
+@media (max-width: 780px) {
+  #hera{
+    font-size: 2.5rem;
+  }
+  #budget{
+    font-size: 3rem;
+  }
+  .subtext{
+    font-size: 0.95rem;
+    letter-spacing: 0.02rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+  #get-started{
+    
+    padding: 1em 2.6em;
+  }
 }
