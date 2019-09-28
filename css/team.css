@@ -45,3 +45,7 @@
 	cursor: pointer;
 	transition: 0.5s;
 }
+@media all and (max-width: 468px) {
+	.profile_margin{
+	margin-top: 22% !important;
+}
