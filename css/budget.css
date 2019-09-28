@@ -44,6 +44,12 @@ h3{
   width: 120%;
   padding: 10px;
 }
+.history-card{
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #fff;
+}
 h5{
   font-weight: 600;
   margin-left: 20px;
