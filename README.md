@@ -3,12 +3,12 @@
 Task 3 Category 1 for Team Hera - Budget App
 
 # Project:
-Budget App This project is a budget app that allows the user to input income and budget items. The app automatically allocates amounts for each item based on priority levels assigned by the user. This app is Task 1 for Team Hera working together from one repository for th HNG Internship 6.0. Contribution Guidelines Read these guidelines carefully. Feel free to reach out, if you have any questions. NB: Please, don't push to master. On your IDE, create a new branch (New branch can be named anything including your name).
+Budget App - This project is a budget app that allows the user to input income and budget items. The app automatically allocates amounts for each item based on priority levels assigned by the user. This app is Task 1 for Team Hera working together from one repository for th HNG Internship 6.0. Contribution Guidelines - Read these guidelines carefully. Feel free to reach out, if you have any questions. NB: Please, don't push to master. On your IDE, create a new branch (New branch can be named anything including your name).
 
 # Steps
 
 # Fork the repo.
-Now that you're hear, look at the top rightside of our repo homepage. You'd see the "Fork" button. Go ahead, feel free, to click on it to get a local fork of the the project. Well-done, you have now created a copy of the repository on your GitHub. Look out for the notification on the screen that says you have successfully forked the project.
+Now that you're here, look at the top rightside of our repo homepage. You'd see the "Fork" button. Go ahead, feel free, to click on it to get a local fork of the the project. Well-done, you have now created a copy of the repository on your GitHub. Look out for the notification on the screen that says you have successfully forked the project.
 
 We Move...
 
@@ -33,8 +33,9 @@ Click "Create a Pull Request".
 
 Don't worry about merging it. It will be reviewed and merged.
 
-Project Dependencies Frontend HTML CSS JavaScript Bootstrap (to be decided upon)
+# Project Dependencies
 
+Frontend HTML CSS JavaScript Bootstrap (to be decided upon)
 Backend PHP MySQL
 
 # Minimum Viable Product
