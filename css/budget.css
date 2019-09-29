@@ -337,7 +337,15 @@ a:hover {
 // No media query for `xs` since this is the default in Bootstrap*/
 
 /*// Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) { 
+@media (max-width: 576px) { 
+.budget-list-card{
+  margin-top: 10%;
+  padding: 5px !important;
+
+}
+#budgetButton,#expenseButton{
+  margin-left: 0px !important;
+}
 
 }
 
@@ -360,20 +368,32 @@ a:hover {
 
   width: 100%;
 }
-.budget-list-card{
+#priorities, #userbudget{
+  width: 50% !important;
+  margin: auto;
+}
+.priority{
+  text-align: center;
+}
+/*.budget-list-card{
   margin-top: 10%;
   padding: 5px !important;
 
+}*/
+#budgetButton,#expenseButton{
+  margin-left: -27px ;
 }
 th{
   text-transform: uppercase !important;
   font-weight: 400;
   font-size: 100%;
+  text-decoration: bolder;
 
 }
 td{
   font-size: 70%;
 }
+
 
  }
 
