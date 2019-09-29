@@ -13,6 +13,7 @@ const addedBudgetResponseMessage = document.getElementById(
 const addExpenseForm = document.querySelector("#expenseform");
 const calculateBtn = document.getElementById("calculate");
 const table = document.getElementById("table");
+const tbody= document.getElementById("tbody");
 
 const expenseArray = [];
 let Budget = {};
@@ -65,6 +66,24 @@ addExpenseForm.addEventListener("submit", event => {
     expenseResponseMessage.textContent = null;
     // Send Success MEssage
     addedExpenseResponseMessage.append(`Added "${expenseName}" to Budget.`);
+
+
+    // Render table here
+    const tr = document.createElement("tr");
+    
+    const _id = expenseName.trim().slice(0, 2);
+    tr.innerHTML = `
+    <td> <span class="budget-icon"> ${_id}  </span> </td>
+    <td> ${expenseName}  </td>
+    <td> ${priority}  </td>
+    <td> ₦ ...  </td>
+    <hr>
+    `;
+
+    console.log(tr);
+
+    table.append(tr);
+
     // console.log(expenseArray);
 
     expenseName = document.querySelector("#expensename");
@@ -128,6 +147,19 @@ const calculateBudget = async () => {
 calculateBtn.addEventListener("click", calculateBudget);
 
 const renderExpenses = (array, balance) => {
+  <thead  class="thead-light">
+  <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Item</th>
+                          <th scope="col">Priority</th>
+                          <th scope="col">Amount</th>
+
+                        </tr>
+                        
+                      </thead>
+  `
+  table.innerHTML = " ";
+  table.innerHTML = thead
   for (expense in array) {
     const tr = document.createElement("tr");
     // let _id = array[expense].expenseName.slice(0 , 1);
