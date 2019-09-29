@@ -147,6 +147,9 @@ const calculateBudget = async () => {
 calculateBtn.addEventListener("click", calculateBudget);
 
 const renderExpenses = (array, balance) => {
+  console.log(tbody)
+
+  const thead = `
   <thead  class="thead-light">
   <tr>
                           <th scope="col"></th>
