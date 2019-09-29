@@ -3,8 +3,8 @@
 /* work on the styling  @developerRuq @Goldin @thrive */
 
 .budget-logo{
-  margin-left: -10%;
-  width: 150px;
+  /*margin-left: ;*/
+  width: 80px;
   height: auto;
 }
 .side-pane{
@@ -310,4 +310,115 @@ a:hover {
   .menu li.button {
     padding-right: 0;
   }
+}
+.nav-bar-toggler{
+  opacity: 0;
+}
+
+.dropdown-menu {
+    min-width: 15rem !important;
+}
+
+.small-nav{
+  /*display: none;*/
+  background-color: #fff !important;
+  text-align: center;
+  padding: 10px;
+  margin-top: 5px;
+  width: 50% !important;
+  margin-bottom: 4%;
+}
+.choked{
+  padding: 5%;
+}
+/*MEdia Queries*/
+
+/*// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap*/
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) { 
+.budget-list-card{
+  margin-top: 10%;
+  padding: 5px !important;
+
+}
+#budgetButton,#expenseButton{
+  margin-left: 0px !important;
+}
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+
+ }
+
+
+
+/*// Large devices (desktops, 992px and up)*/
+@media (max-width: 992px) { 
+  .side-pane{
+    display: none;
+  }
+  .nav-bar-toggler{
+    opacity: 1;
+  }
+  .card{
+
+  width: 100%;
+}
+#priorities, #userbudget{
+  width: 50% !important;
+  margin: auto;
+}
+.priority{
+  text-align: center;
+}
+/*.budget-list-card{
+  margin-top: 10%;
+  padding: 5px !important;
+
+}*/
+#budgetButton,#expenseButton{
+  margin-left: -27px ;
+}
+th{
+  text-transform: uppercase !important;
+  font-weight: 400;
+  font-size: 100%;
+  text-decoration: bolder;
+
+}
+td{
+  font-size: 70%;
+}
+
+
+ }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (max-width: 1024px) { 
+  h5{
+      font-size: 120%;
+
+  }
+  .naira-symbol {
+    width: 21px;
+    height: auto;
+}
+.form-control {
+    
+    height: calc(1em + .75rem + 2px) !important;
+    padding: .375rem .75rem;
+    
+    }
+
+    .budget-board {
+    padding: 19px;
+}
+.user-img {
+    margin: auto;
+    display: block;
+}
 }
