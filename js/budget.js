@@ -196,9 +196,9 @@ const renderExpenses = (array, balance) => {
     newInput.setAttribute("class","editableBudget");
     newInput.setAttribute("value",`${array[expense].fundAllocated}`);
     newInput.setAttribute("keyup","editBudget()");
-    let originalPrice = document.createAttribute("originalPrice");
-    originalPrice.value = `${array[expense].fundAllocated}`;
-    newInput.setAttributeNode(originalPrice);
+    let originalprice = document.createAttribute("data-originalprice");
+    originalprice.value = `${array[expense].fundAllocated}`;
+    newInput.setAttributeNode(originalprice);
     newTD.appendChild(newInput);
     newInput.addEventListener("keyup",editBudget);
 
@@ -238,12 +238,13 @@ const renderExpenses = (array, balance) => {
   }
   if (balance) {
     const tr = document.createElement("tr");
+    tr.setAttribute("id","balanceTR");
 
     tr.innerHTML = `
     <td> </td>
     <td> </td>
     <td> <b> BALANCE </b>  </td>
-    <td id = "balance"> ₦ ${balance}  </td>`;
+    <td >₦ <span id = "balance">${balance}</span></td>`;
 
     table.append(tr);
   } else {
@@ -273,21 +274,50 @@ const roundDown = (num, precision) => {
 //  the code above is for the nav bar
 
 
-/*const editBudget = (e) => {
-  
-  //let originalValue = this.value;
-  if(e.keycode === 13){
-    console.log("works!");
-    /*let balance = parseInt(document.querySelector("#balance").textContent);
-    balance = balance + parseInt(Math.abs(originalValue - this.value));*
-    }
-  
-}*/
 
 const editBudget = (event) => {
+  
   if(event.keyCode === 13){
-    //event.preventDefault();
+    let originalPrice = parseInt((event.target.dataset.originalprice).replace(/,/gi,""));  //works
+    let modifiedValue = parseInt((event.target.value).replace(/,/gi,""));
+    let balance = document.getElementById("balance");
+   /* console.log(originalPrice);
+    console.log(modifiedValue);
+    let balanceValue;*/
+
+   
+    
+
     console.log("works!");
-  }
+  
     console.log("hey");
+    if(balance === null){
+        balanceValue = 0;
+        const tr = document.createElement("tr");
+        tr.setAttribute("id","balanceTR");
+        tr.innerHTML = `
+        <td> </td>
+        <td> </td>
+        <td> <b> BALANCE </b>  </td>
+        <td >₦ <span id = "balance">${balanceValue}</span></td>`;
+    
+        table.append(tr);
+    }
+    else {
+        // Do nothing ;
+        
+        balanceValue = parseInt(balance.innerHTML);  //works
+    }
+
+    //console.log(balanceValue);
+    
+
+    document.getElementById("balance").innerHTML = balanceValue + (originalPrice - modifiedValue);
+    event.target.dataset.originalprice = event.target.value; 
+    
+    //console.log(typeof document.getElementById("balance").innerHTML);
+  }
+
 }
+
+
