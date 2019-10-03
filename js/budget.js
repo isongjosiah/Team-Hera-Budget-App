@@ -1,7 +1,20 @@
 /* js file for budget page */
-
+window.onload = () => {
+  let editableBudgets = document.getElementsByClassName("editableBudget");
+  console.log(editableBudgets);
+    for(i = 0; i < editableBudgets.length; i++){
+      editableBudgets.item(i).addEventListener("keyup",(event) => {
+        if(event.keyCode === 13){
+          //event.preventDefault();
+          console.log("works!");
+          }
+          console.log("hey");
+      });
+    
+    }
+}
 const addBudgetForm = document.getElementById("budgetform");
-const budgetResponseMessage = document.getElementById("budgetResponseMessage");
+const budgetResponseMessage = document.getElementById("budgetResponseMessage");  //contains please enter a valid budget message
 const expenseResponseMessage = document.getElementById(
   "expenseResponseMessage"
 );
@@ -9,6 +22,7 @@ const addedBudgetResponseMessage = document.getElementById(
   "addedBudgetResponseMessage"
 );
 // const addedExpenseResponseMessage document.getElementById('addedExpenseResponseMessage');
+
 
 const addExpenseForm = document.querySelector("#expenseform");
 const calculateBtn = document.getElementById("calculate");
@@ -26,7 +40,7 @@ addBudgetForm.addEventListener("submit", event => {
   event.preventDefault();
   userBudget = document.getElementById("userbudget").value;
 
-  if (userBudget < 0 || userBudget === "" || userBudget === null) {
+  if (userBudget <= 0 || userBudget === "" || userBudget === null) {
     budgetResponseMessage.append("Please, enter a valid budget.");
     setTimeout(function() {
       budgetResponseMessage.remove();
@@ -76,7 +90,7 @@ addExpenseForm.addEventListener("submit", event => {
     <td> <span class="budget-icon"> ${_id}  </span> </td>
     <td> ${expenseName}  </td>
     <td> ${priority}  </td>
-    <td> ₦ ...  </td>
+    <td>₦... </td>
     <hr>
     `;
 
@@ -146,6 +160,7 @@ const calculateBudget = async () => {
 // Start Calculating
 calculateBtn.addEventListener("click", calculateBudget);
 
+
 const renderExpenses = (array, balance) => {
   console.log(tbody)
 
@@ -163,7 +178,7 @@ const renderExpenses = (array, balance) => {
   `
   table.innerHTML = " ";
   table.innerHTML = thead
-  for (expense in array) {
+  for (expense in array) {      
     const tr = document.createElement("tr");
     // let _id = array[expense].expenseName.slice(0 , 1);
     // console.log(array[expense]);
@@ -171,24 +186,65 @@ const renderExpenses = (array, balance) => {
     <td> <span class="budget-icon"> ${array[expense]._id}  </span> </td>
     <td> ${array[expense].expenseName}  </td>
     <td> ${array[expense].priority}  </td>
-    <td> ₦ ${array[expense].fundAllocated}  </td>
-    <hr>
+    
     `;
+
+    const newTD = document.createElement("td");
+    newTD.appendChild(document.createTextNode("₦ "));
+    const newInput = document.createElement("input");
+    newInput.setAttribute("type","text");
+    newInput.setAttribute("class","editableBudget");
+    newInput.setAttribute("value",`${array[expense].fundAllocated}`);
+    newInput.setAttribute("keyup","editBudget()");
+    let originalprice = document.createAttribute("data-originalprice");
+    originalprice.value = `${array[expense].fundAllocated}`;
+    newInput.setAttributeNode(originalprice);
+    newTD.appendChild(newInput);
+    newInput.addEventListener("keyup",editBudget);
+
+    tr.appendChild(newTD);
+
+    hr = document.createElement("hr");
+    tr.appendChild(hr);
+
+
+    /*let editableBudgets = document.getElementsByClassName("editableBudget");
+    editableBudgets.item(i).addEventListener("keyup",(event) => {
+      if(event.keyCode === 13){
+        //event.preventDefault();
+        console.log("works!");
+        }
+        console.log("hey");
+    });*/
+    //<td> id = "inputHolder"> ₦ <input type = "text" class = "editableBudget" value = "${array[expense].fundAllocated}"></td>
+    //<hr>
+    
+    /*const newInput = document.createElement("input");
+    newInput.setAttribute("type","text");
+    newInput.setAttribute("class","editableBudget");
+    newInput.setAttribute("value",`${array[expense].fundAllocated}`);
+    newInput.setAttribute("keyup","editBudget()");
+    .appendChild(newInput);
+    newInput.addEventListener("keyup",editBudget);*/
+
+    
     // console.log(tr);
 
     table.append(tr);
     // _id = " "
     // alert(balance)
     // console.log(array[expense]);
+    
   }
   if (balance) {
     const tr = document.createElement("tr");
+    tr.setAttribute("id","balanceTR");
 
     tr.innerHTML = `
     <td> </td>
     <td> </td>
     <td> <b> BALANCE </b>  </td>
-    <td> ₦ ${balance}  </td>`;
+    <td >₦ <span id = "balance">${balance}</span></td>`;
 
     table.append(tr);
   } else {
@@ -216,3 +272,52 @@ const roundDown = (num, precision) => {
 // });
 
 //  the code above is for the nav bar
+
+
+
+const editBudget = (event) => {
+  
+  if(event.keyCode === 13){
+    let originalPrice = parseInt((event.target.dataset.originalprice).replace(/,/gi,""));  //works
+    let modifiedValue = parseInt((event.target.value).replace(/,/gi,""));
+    let balance = document.getElementById("balance");
+   /* console.log(originalPrice);
+    console.log(modifiedValue);
+    let balanceValue;*/
+
+   
+    
+
+    console.log("works!");
+  
+    console.log("hey");
+    if(balance === null){
+        balanceValue = 0;
+        const tr = document.createElement("tr");
+        tr.setAttribute("id","balanceTR");
+        tr.innerHTML = `
+        <td> </td>
+        <td> </td>
+        <td> <b> BALANCE </b>  </td>
+        <td >₦ <span id = "balance">${balanceValue}</span></td>`;
+    
+        table.append(tr);
+    }
+    else {
+        // Do nothing ;
+        
+        balanceValue = parseInt(balance.innerHTML);  //works
+    }
+
+    //console.log(balanceValue);
+    
+
+    document.getElementById("balance").innerHTML = balanceValue + (originalPrice - modifiedValue);
+    event.target.dataset.originalprice = event.target.value; 
+    
+    //console.log(typeof document.getElementById("balance").innerHTML);
+  }
+
+}
+
+

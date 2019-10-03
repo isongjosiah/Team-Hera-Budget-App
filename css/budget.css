@@ -331,6 +331,13 @@ a:hover {
 .choked{
   padding: 5%;
 }
+
+.editableBudget{
+  border-radius: 5px;
+  border: 1px solid #428bca;
+  padding: 0.5em 1em;
+  width: 70%;
+}
 /*MEdia Queries*/
 
 /*// Extra small devices (portrait phones, less than 576px)
